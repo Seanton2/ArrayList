@@ -66,6 +66,14 @@ class ArrayList : public List {
             return array[pos-1];
         };
 
+        int size() {
+            return index;
+        };
+
+        bool isEmpty() {
+            return index == 0;
+        };
+
         int remove(int num) {
             int pos = -1;
 
@@ -102,7 +110,10 @@ class ArrayList : public List {
         }
 
         void print() {
-            cout << "Current Capacity: " << index << " / " << capacity << endl;
+            if(isEmpty()) {
+                cout << "List is empty." << endl;
+                return;
+            }
             for(int i = 0; i < index; i++) {
                 cout << array[i] << " ";
             }
