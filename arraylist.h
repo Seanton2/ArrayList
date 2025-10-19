@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "list.h"
 #define INITIAL_CAPACITY 5
 #define GROWTH_FACTOR 1.5
@@ -18,7 +19,7 @@ class ArrayList : public List {
         }
     }
 
-    void dynamic_shrink() {
+    void dynamic_shrink() { 
         if(capacity == INITIAL_CAPACITY) return;
         int new_size = ceil(capacity * 0.75);
         if(new_size < INITIAL_CAPACITY) new_size = INITIAL_CAPACITY;
