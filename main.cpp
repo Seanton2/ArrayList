@@ -1,12 +1,12 @@
 #include <iostream>
-#include "linkedlist.h"
+#include "arraylist.h"
 using namespace std;
 
 int main() {
-    List* list = new LinkedList();
-    list->add(10);
-    list->add(20);
-    list->print();
-    delete list;
+    ArrayList* List = new ArrayList();
+    List->add(10);
+    List->add(20);
+    List->print();
+    delete List;
     return 0;
 }
