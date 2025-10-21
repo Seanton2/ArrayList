@@ -9,6 +9,16 @@ class ArrayList : public List {
     int* array;
     int index;
     int capacity = INITIAL_CAPACITY;
+    
+     public:
+        ArrayList() {
+            array = (int*) malloc(INITIAL_CAPACITY * sizeof(int));
+            index = 0;
+        }
+
+        ~ArrayList() {
+            free(array);
+        }
 
     void dynamic_expand() {
         int new_size = ceil(capacity * GROWTH_FACTOR);
@@ -30,15 +40,7 @@ class ArrayList : public List {
         }
     }
 
-    public:
-        ArrayList() {
-            array = (int*) malloc(INITIAL_CAPACITY * sizeof(int));
-            index = 0;
-        }
-
-        ~ArrayList() {
-            free(array);
-        }
+   
         
         void add(int num) {
             if(index == capacity) dynamic_expand();
